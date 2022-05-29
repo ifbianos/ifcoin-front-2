@@ -1,40 +1,37 @@
 @charset "UTF8";
 
 .card-container {
-    width: 320px;
+    width: 35%;
 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
-    margin: 20px;
-    padding: 20px;
+    margin: 1.5rem;
+    padding: 1.5rem;
 
-    border-radius: 5px;
+    border-radius: .5rem;
 
     background-color: white;
 }
 
 .card {
-    flex: 1 1 150px;
-    margin: 5px;
+    font-size: 1rem;
 }
 
 .btn-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .btn {
     background-color: var(--light-green);
-	border-radius: 5px;
+	border-radius: .3rem;
 	display: inline-block;
 	cursor: pointer;
 	color: #ffffff;
-	font-family: Arial;
-	font-size: 17px;
-	padding: 10px 25px;
-    margin: 0 15px; 
+	font-size: 1rem;
+	padding: 0.5rem 2.8em; 
 	text-decoration: none;
     border: none;
 }

@@ -1,7 +1,7 @@
 @charset "UTF8";
 
 .events-pg-container {
-    width: 65%;
+    width: 65vw;
 
     float: right;
     clear: both;
@@ -12,7 +12,7 @@
     margin: 1%;
     padding: 1%;
 
-    border-radius: 5px;
+    border-radius: .5rem;
 
     background-color: var(--light-gray);
 }

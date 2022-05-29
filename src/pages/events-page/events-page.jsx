@@ -19,8 +19,8 @@ function EventsPage() {
         <Card
           title='Título do evento'
           description={cardDescription()}
-          button1='Aceitar'
-          button2='Recusar'
+          button1='Recusar'
+          button2='Aceitar'
         />
       ))}
     </div>
