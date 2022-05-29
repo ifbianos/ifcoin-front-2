@@ -1,0 +1,32 @@
+[
+    {
+        "name":"rafael",
+        "lastName":"campos",
+        "cpf": "0882133313633",
+        "role":"aluno"
+    },
+    {
+        "name":"Tosta",
+        "lastName":"Igor",
+        "cpf": "0882133313632",
+        "role":"aluno"
+    },
+    {
+        "name":"Rapadura",
+        "lastName":"Vovó",
+        "cpf": "0882133313634",
+        "role":"aluno"
+    },
+    {
+        "name":"Pauleta",
+        "lastName":"Sheory",
+        "cpf": "0882133313635",
+        "role":"professor"
+    },
+    {
+        "name":"Json",
+        "lastName":"Json",
+        "cpf": "0882133313636",
+        "role":"professor"
+    }
+]
