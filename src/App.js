@@ -19,7 +19,7 @@ function App() {
         <Link to="/perfil">Painel de usuario</Link><br/>
         <Link to="/atualizar_perfil">Gestao de dados pessoais</Link><br/>
         {/*Colirio*/}
-        <Link to="/cadastrar_evento">Cadastro de eventos</Link><br/>
+        <Link to="/eventos">Cadastro de eventos</Link><br/>
         <Link to="/inscricoes">Gestao de inscrições</Link><br/>
         {/*Tosta*/}
         <Link to="/recompensas">Gestao de recompensas</Link><br/>
