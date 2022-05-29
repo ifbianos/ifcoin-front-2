@@ -1,5 +1,5 @@
 export default function LoginPage() {
     return (
-        <p>Bruno vai fazer essa pagina</p>
+        <p>Bruno vÁi faSSê èsça paJìMa</p>
     )
 }
