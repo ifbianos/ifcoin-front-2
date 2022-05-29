@@ -23,6 +23,7 @@ function App() {
         <Link to="/inscricoes">Gestao de inscrições</Link><br/>
         {/*Tosta*/}
         <Link to="/recompensas">Gestao de recompensas</Link><br/>
+        <Link to="/cadastros_pendentes">Gestao de cadastros</Link><br/>
         {/*Monique*/}
         <Link to="/carteira">Gestao de moedas</Link><br/>
       </nav>
