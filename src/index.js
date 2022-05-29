@@ -7,6 +7,7 @@ import {
 import App from './App';
 import EventsPage from './pages/events-page/events-page';
 import LoginPage from './pages/login-page/login-page';
+import Signin from './signin/signin';
 
 const root = ReactDOM.createRoot(
   document.getElementById("root")
@@ -17,6 +18,7 @@ root.render(
       <Route path="/" element={<App />} />
       <Route path="/entrar" element={<LoginPage />} />
       <Route path="/eventos" element={<EventsPage />} />
+      <Route path="/cadastrar" element={<Signin />} />
     </Routes>
   </BrowserRouter>
 );
