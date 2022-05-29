@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import './signin.css';
 
 export default function Signin() {
 
@@ -46,36 +47,35 @@ export default function Signin() {
     });
   }
   return (
-    <form onSubmit={submitData}>
-      <label>
-        Name:
-        <input type="text" name="name" value={user.name} onChange={ handleChange} />
-      </label>
-      <br></br>
-      <label>
-        Last Name:
+    <form onSubmit={submitData} className='formulario'>
+      <div className="form-data">
+        <label>
+          Last Name:
+        </label>
         <input type="text" name="lastName" value={user.lastName} onChange={handleChange}/>
-      </label>
+      </div>
       <br></br>
-      <label>
-        Cpf:
+      <div className="form-data">
+        <label>
+          Cpf:
+        </label>
         <input type="text" name="cpf" value={user.cpf} onChange={handleChange}/>
-      </label>
+      </div>
       <br></br>
       <label>
         Role:
-        <input type="text" name="role" value={user.role} onChange={handleChange}/>
       </label>
+      <input type="text" name="role" value={user.role} onChange={handleChange}/>
       <br></br>
       <label>
         Username:
-        <input type="text" name="username" value={user.userRequest.username} onChange={handleChangeSecond} />
       </label>
+      <input type="text" name="username" value={user.userRequest.username} onChange={handleChangeSecond} />
       <br></br>
       <label>
         Password:
-        <input type="text" name="password" value={user.userRequest.password} onChange={handleChangeSecond}/>
       </label>
+      <input type="text" name="password" value={user.userRequest.password} onChange={handleChangeSecond}/>
       <br></br>
       <input type="submit" value="Enviar" />
     </form>
