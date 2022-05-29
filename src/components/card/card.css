@@ -1,0 +1,44 @@
+@charset "UTF8";
+
+.card-container {
+    width: 320px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin: 20px;
+    padding: 20px;
+
+    border-radius: 5px;
+
+    background-color: white;
+}
+
+.card {
+    flex: 1 1 150px;
+    margin: 5px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    background-color: var(--light-green);
+	border-radius: 5px;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 17px;
+	padding: 10px 25px;
+    margin: 0 15px; 
+	text-decoration: none;
+    border: none;
+}
+
+.btn:hover {
+    background-color: var(--dark-green);
+}

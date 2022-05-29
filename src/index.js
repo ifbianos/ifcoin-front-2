@@ -7,6 +7,7 @@ import {
 import App from './App';
 import EventsPage from './pages/events-page/events-page';
 import LoginPage from './pages/login-page/login-page';
+import './app.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById("root")
