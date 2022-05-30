@@ -1,5 +1,21 @@
-@charset "UTF-8";
+@charset "UTF8";
 
 .events-pg-container {
-    background-color: antiquewhite;
+    width: 65vw;
+
+    /* float: center; */
+    clear: both;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    /* margin: 1%; */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+
+    border-radius: .5rem;
+
+    background-color: var(--light-gray);
 }

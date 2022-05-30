@@ -1,13 +1,13 @@
 import Card from '../../components/card/card';
-import './events-page.css'
+import './events-page.css';
 
 function EventsPage() {
-  let array = [1, 2, 3, 4];
+  let array = [1, 2, 3, 4, 5, 6, 7];
 
   const cardDescription = () => {
     return (
       <>
-        <p>Esse evento...</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit dolor eveniet natus, tempore, ea, reiciendis cumque voluptas perspiciatis corporis atque ipsum porro..</p>
         <p>Moedas ofertadas: COIN</p>
       </>
     );
@@ -19,8 +19,8 @@ function EventsPage() {
         <Card
           title='Título do evento'
           description={cardDescription()}
-          button1='Aceitar'
-          button2='Recusar'
+          button1='Recusar'
+          button2='Aceitar'
         />
       ))}
     </div>

@@ -1,3 +1,5 @@
+import './card.css';
+
 function Card(props) {
   const {
     title,
@@ -7,16 +9,16 @@ function Card(props) {
   } = props;
 
   return (
-    <div>
+    <div className='card-container'>
       <h3>{title}</h3>
       
       <div>
         {description}
       </div>
 
-      <div>
-        <button>{button1}</button>
-        <button>{button2}</button>
+      <div className='btn-container'>
+        <button className='btn' id='deny'>{button1}</button>
+        <button className='btn'>{button2}</button>
       </div>
     </div>
   )
