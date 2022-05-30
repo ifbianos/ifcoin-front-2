@@ -10,17 +10,15 @@ function Card(props) {
 
   return (
     <div className='card-container'>
-      <div className='card'>
-        <h3>{title}</h3>
-        
-        <div>
-          {description}
-        </div>
+      <h3>{title}</h3>
+      
+      <div>
+        {description}
+      </div>
 
-        <div className='btn-container'>
-          <button className='btn'>{button1}</button>
-          <button className='btn'>{button2}</button>
-        </div>
+      <div className='btn-container'>
+        <button className='btn' id='deny'>{button1}</button>
+        <button className='btn'>{button2}</button>
       </div>
     </div>
   )

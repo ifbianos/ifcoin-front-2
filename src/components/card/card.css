@@ -13,27 +13,43 @@
     border-radius: .5rem;
 
     background-color: white;
-}
-
-.card {
     font-size: 1rem;
 }
 
 .btn-container {
     display: flex;
     justify-content: space-between;
+
+    width: 100%;
+    gap: .5rem;
 }
 
 .btn {
     background-color: var(--light-green);
 	border-radius: .3rem;
-	display: inline-block;
-	cursor: pointer;
-	color: #ffffff;
-	font-size: 1rem;
-	padding: 0.5rem 2.8em; 
+
+    cursor: pointer;
+
+    color: #ffffff;
 	text-decoration: none;
+    font-size: 1rem;
+
+	padding: 0.5rem 2.8em; 
     border: none;
+    /* width: 45%; */
+
+    text-align: center;
+}
+
+#deny {
+    border: 1px solid var(--light-green);
+    color: var(--light-green);
+    background: white;
+}
+
+#deny:hover {
+    background: var(--light-green);
+    color: white;
 }
 
 .btn:hover {

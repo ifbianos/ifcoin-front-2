@@ -3,13 +3,16 @@
 .events-pg-container {
     width: 65vw;
 
-    float: right;
+    /* float: center; */
     clear: both;
 
     display: flex;
     flex-wrap: wrap;
-
-    margin: 1%;
+    justify-content: center;
+    
+    /* margin: 1%; */
+    margin-left: auto;
+    margin-right: auto;
     padding: 1%;
 
     border-radius: .5rem;
