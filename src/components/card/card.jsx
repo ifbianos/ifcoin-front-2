@@ -5,8 +5,13 @@ function Card(props) {
     title,
     description,
     button1,
-    button2
+    button2,
+    item,
+    handleChangeB1,
+    handleChangeB2
   } = props;
+
+  console.log(handleChangeB2)
 
   return (
     <div className='card-container'>
@@ -17,8 +22,8 @@ function Card(props) {
       </div>
 
       <div className='btn-container'>
-        <button className='btn' id='deny'>{button1}</button>
-        <button className='btn'>{button2}</button>
+        <button className='btn' id='deny'  onClick={() => handleChangeB1 ? handleChangeB1(item.cpf) : null}>{button1}</button>
+        <button className='btn' onClick={() => handleChangeB2 ? handleChangeB2(item.cpf) : null }>{button2}</button>
       </div>
     </div>
   )

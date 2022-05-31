@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+}
+
 form {
     border-radius: 5px;
     display: flex;
@@ -31,3 +35,20 @@ input {
 
 }
 
+.add-signin-container {
+    /* margin-top: 200px; */
+    /* margin-bottom: auto; */
+}
+
+.signin-page {
+    width: 100vw;
+    height: 100vh;
+    /* background-color: var(--medium-green); */
+
+    margin: 0;
+}
+
+/* .screen-2 {
+    width: 50vw;
+    background-color: rgb(177, 182, 237) !important;
+} */

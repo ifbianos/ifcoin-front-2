@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
 import Card from '../../components/card/card';
 import './events-page.css';
+// import API from "../../api";
 
 function EventsPage() {
   let array = [1, 2, 3, 4, 5, 6, 7];
@@ -13,17 +15,28 @@ function EventsPage() {
     );
   }
 
+  // const handleCreateEvent = () => {
+
+  // }
+
+
   return (
-    <div className='events-pg-container'>
-      {array.map(() => (
-        <Card
-          title='Título do evento'
-          description={cardDescription()}
-          button1='Recusar'
-          button2='Aceitar'
-        />
-      ))}
-    </div>
+    <>
+      <button
+      >
+        <Link to='/criar_evento'>Criar evento</Link>
+      </button>
+      <div className='events-pg-container'>
+        {array.map(() => (
+          <Card
+            title='Título do evento'
+            description={cardDescription()}
+            button1='Recusar'
+            button2='Aceitar'
+          />
+        ))}
+      </div>
+    </>
   );
 }
 

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import './signin.css';
+import Form from "../components/form/form";
+import API from "../api";
 
 export default function Signin() {
 
@@ -36,7 +38,7 @@ export default function Signin() {
 
   function submitData(evt){
     evt.preventDefault();
-    axios.post('http://localhost:8080/api/user/requestaccount',
+    API.post('/api/user/requestaccount',
       user
     )
     .then(function (response) {
@@ -47,39 +49,61 @@ export default function Signin() {
     });
   }
   return (
-    <form onSubmit={submitData} className='formulario'>
-      <div className="form-data">
-        <label>
-          Last Name:
-        </label>
-        <input type="text" name="lastName" value={user.lastName} onChange={handleChange}/>
-      </div>
-      <br></br>
-      <div className="form-data">
-        <label>
-          Cpf:
-        </label>
-        <input type="text" name="cpf" value={user.cpf} onChange={handleChange}/>
-      </div>
-      <br></br>
-      <label>
-        Role:
-      </label>
-      <input type="text" name="role" value={user.role} onChange={handleChange}/>
-      <br></br>
-      <label>
-        Username:
-      </label>
-      <input type="text" name="username" value={user.userRequest.username} onChange={handleChangeSecond} />
-      <br></br>
-      <label>
-        Password:
-      </label>
-      <input type="text" name="password" value={user.userRequest.password} onChange={handleChangeSecond}/>
-      <br></br>
-      <input type="submit" value="Enviar" />
-    </form>
+    <div className="signin-page">
+      <div className="add-event-container add-signin-container">
+        <p>Requisitar conta</p>
+        <div className="form-blocks">
+          <div className="forms-block-1">
+            <Form 
+              handleChange={handleChange}
+              type="text"
+              name="name"
+              label="Nome"
+              value={user.name}
+            />
+            <Form 
+              handleChange={handleChange}
+              type="text"
+              label="Sobrenome"
+              name="lastName"
+              value={user.lastName}
+            />
+            <Form 
+              handleChange={handleChange}
+              type="text"
+              label="CPF"
+              name="cpf"
+              value={user.cpf}
+            />
+          </div>
+          <div className="forms-block-2">
+            <Form 
+              handleChange={handleChange}
+              type="text"
+              label="Categoria"
+              name="role"
+              value={user.role}
+            />
+            <Form 
+              handleChange={handleChangeSecond}
+              type="text"
+              label="UserName"
+              name="username"
+              value={user.userRequest.username}
+            />
+            <Form 
+              handleChange={handleChangeSecond}
+              type="text"
+              label="Senha"
+              name="password"
+              value={user.userRequest.password}
+            />
+          </div>
+        </div>
 
-    
+        <button className='btn' onClick={submitData}>ENVIAR</button>
+      </div>
+      <div  className="screen-2"/>
+    </div>    
   );
 }
