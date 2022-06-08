@@ -1,0 +1,18 @@
+.side-bar-item {
+    font-size: 1rem;
+    letter-spacing: 0.01rem;
+    text-transform: capitalize;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    width: 100%;
+}
+
+.side-bar-item a {
+    text-decoration: none;
+    color: var(--dark-black);
+    padding-left: 1.4rem;
+}
+
+.side-bar-item:hover{
+    background-color: var(--light-green);
+    cursor: pointer;
+}

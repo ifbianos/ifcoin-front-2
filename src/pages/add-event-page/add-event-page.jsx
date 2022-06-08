@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -94,6 +95,14 @@ export default function AddEventPage() {
             name="startAt"
             value={event.startAt}
           />
+=======
+import React from 'react';
+
+function AddEventPage() {
+    return (
+        <div>
+            
+>>>>>>> Stashed changes
         </div>
         <div className="forms-block-2">
           <Form 

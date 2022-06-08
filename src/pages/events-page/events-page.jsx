@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 import { Link } from 'react-router-dom';
+=======
+import React from 'react';
+>>>>>>> Stashed changes
 import Card from '../../components/card/card';
 import './events-page.css';
 // import API from "../../api";
