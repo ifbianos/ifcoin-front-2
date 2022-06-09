@@ -1,9 +1,6 @@
-<<<<<<< Updated upstream
 import axios from "axios";
 import { useEffect, useState } from "react";
-=======
 import React from 'react';
->>>>>>> Stashed changes
 import Card from "../../components/card/card";
 import data from '../../jsons/registers.json';
 import './registration-manage-page.css';
