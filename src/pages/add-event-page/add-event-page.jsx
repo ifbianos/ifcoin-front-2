@@ -15,8 +15,13 @@ export default function AddEventPage() {
     startAt: "",
     finishAt: "",
     ifCoins: 0,
-    requestStudentList: ""
-  })
+    requestStudentList: []
+  });
+
+  const [students, setStudents] = useState([
+    {id: 1, name: 'tosta', checked: false},
+    {id: 2, name: 'rafael', checked: false}
+  ]);
 
   function handleChange(e) {
     const value = e.target.value;
@@ -28,16 +33,9 @@ export default function AddEventPage() {
       // request_list JSON.parse("[" + string + "]");
   }
 
-//   function handleChangeSecond(e) {
-//     const value = e.target.value;
-//     setEvent({
-//      ...event,
-//       eventRequest: {
-//         ...event.eventRequest,
-//         [e.target.name]: value
-//       },
-//     });
-//   }
+  // const handleRequestList = (id) => {
+  //   setEvent({...event, requestStudentList: event.requestStudentList.push(id)})
+  // }
 
   function submitData(evt){
     evt.preventDefault();
@@ -51,22 +49,26 @@ export default function AddEventPage() {
   }
 
   const handleCreateEvent = () => {
-    const requestList = JSON.parse("[" + event.requestStudentList + "]")[0]
-    console.log('o request list', requestList)
-    setEvent({...event, requestStudentList: requestList});
-    console.log('finalll aq antes de enviar', event)
-    setTimeout(() => (API.post('api/user/event', event)
+    API.post('api/user/event', event)
     .then((response) => {
       console.log(response.data)
     })
     .catch((response) => {
       console.log('erro', response)
-    })), 5000)
-    
+    })
   }
 
-  console.log(event)
 
+  const updateFieldChanged = index => e => {
+    let newArr = [...students];
+    newArr[index].checked = !newArr[index].checked;
+  
+    setStudents(newArr);
+    setEvent({...event, requestStudentList: students.map((student, index) => {
+      if(student.checked) return student.id
+    })})
+
+  }
 
   return (
     <div className="add-event-container">
@@ -110,13 +112,16 @@ export default function AddEventPage() {
             name="ifCoins"
             value={event.ifCoins}
           />
-          <Form 
-            handleChange={handleChange}
-            type="text"
-            label="Convidados"
-            name="requestStudentList"
-            value={event.requestStudentList}
-          />
+          <p>Convidados</p>          
+          {students.map((student, index) => {
+              return (
+                <div>
+                  <input checked={student.checked} onChange={updateFieldChanged(index)} value={student.id} type="checkbox"/>
+                  <label for="html">{student.name}</label>
+                </div>
+              );
+            })
+          }
         </div>
       </div>
 
