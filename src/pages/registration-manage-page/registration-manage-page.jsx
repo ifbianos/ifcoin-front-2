@@ -5,10 +5,6 @@ import data from '../../jsons/registers.json';
 import './registration-manage-page.css';
 import API from "../../api";
 
-/*
-
-*/
-
 export default function RegistrationManagePage() {
   const [requests, setRequests] = useState([]);
   const cardDescription = (data) => {

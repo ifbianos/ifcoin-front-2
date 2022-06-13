@@ -11,7 +11,7 @@ export default function Signin() {
     lastName: "",
     cpf: "",
     role: "",
-    userRequest: {
+    userRequestDto: {
         username: "",
         password: ""
     }
@@ -29,8 +29,8 @@ export default function Signin() {
     const value = e.target.value;
     setUser({
      ...user,
-      userRequest: {
-        ...user.userRequest,
+      userRequestDto: {
+        ...user.userRequestDto,
         [e.target.name]: value
       },
     });
@@ -48,6 +48,7 @@ export default function Signin() {
       console.log(error);
     });
   }
+
   return (
     <div className="signin-page">
       <div className="add-event-container add-signin-container">
@@ -89,14 +90,14 @@ export default function Signin() {
               type="text"
               label="UserName"
               name="username"
-              value={user.userRequest.username}
+              value={user.userRequestDto.username}
             />
             <Form 
               handleChange={handleChangeSecond}
               type="text"
               label="Senha"
               name="password"
-              value={user.userRequest.password}
+              value={user.userRequestDto.password}
             />
           </div>
         </div>
