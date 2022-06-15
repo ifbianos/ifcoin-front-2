@@ -9,9 +9,8 @@ const SideBar = () => {
     return (
         <div className='side-bar-container'>
             <div className='side-bar-items'>
-            {   
+            {
                 data.map((item, index) => { 
-
                     return <SideBarItem 
                         name={item.name}
                         key={index} 
