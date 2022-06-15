@@ -1,25 +1,35 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import Card from '../../components/card/card';
 import './events-page.css';
-// import API from "../../api";
+import API from '../../api';
 
 function EventsPage() {
-  let array = [1, 2, 3, 4, 5, 6, 7];
+  const [events, setEvents] = useState([]);
 
-  const cardDescription = () => {
+  useEffect(() => {
+    getEvents()
+  }, [])
+
+  const getEvents = () => {
+    API.get('api/user/event')
+    .then((response) => {
+      setEvents(response.data)
+    })
+    .catch((response) => {
+      console.log('erro', response)
+    })
+  }
+
+  const cardDescription = (event) => {
     return (
       <>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit dolor eveniet natus, tempore, ea, reiciendis cumque voluptas perspiciatis corporis atque ipsum porro..</p>
-        <p>Moedas ofertadas: COIN</p>
+        <p>{event.description}</p>
+        <p>Moedas ofertadas: {event.ifCoins}</p>
       </>
     );
   }
-
-  // const handleCreateEvent = () => {
-
-  // }
-
 
   return (
     <>
@@ -28,10 +38,10 @@ function EventsPage() {
         <Link to='/criar_evento'>Criar evento</Link>
       </button>
       <div className='events-pg-container'>
-        {array.map(() => (
+        {events.map((event, index) => (
           <Card
-            title='Título do evento'
-            description={cardDescription()}
+            title={event.name}
+            description={cardDescription(event)}
             button1='Recusar'
             button2='Aceitar'
           />

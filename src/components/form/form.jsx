@@ -9,8 +9,7 @@ const Form = (props) => {
     type,
     value
   } = props;
-  console.log(type === 'date')
-  // console.log(type instanceof Date)
+
   return (
     <div className={`form-container ${value.length || type === 'date' ? 'input' : ''}`}>
       {value.length || type === 'date' ?
