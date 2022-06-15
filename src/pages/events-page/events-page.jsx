@@ -2,16 +2,15 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Card from '../../components/card/card';
 import './events-page.css';
-import API from "../../api";
+import API from '../../api';
 
 function EventsPage() {
-  // let array = [1, 2, 3, 4, 5, 6, 7];
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
     getEvents()
   }, [])
-  console.log('event', events)
+
   const getEvents = () => {
     API.get('api/user/event')
     .then((response) => {

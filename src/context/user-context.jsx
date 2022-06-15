@@ -1,14 +1,12 @@
 import React, {createContext, useContext, useState} from 'react';
 import API from '../api';
 
-
 const UserContext = createContext();
 
 export const login = (user) => {
   API.post('api/user/login', user)
   .then(function (response) {
     saveUserSessionStorage(response.data)
-    console.log('response', response.data);
   })
   .catch(function (error) {
     console.log(error);
@@ -16,7 +14,11 @@ export const login = (user) => {
 }
 
 export function saveUserSessionStorage(user) {
-  sessionStorage.setItem("user", JSON.stringify({"id": user.user.id, "name": user.name}))
+  sessionStorage.setItem("user", JSON.stringify({
+    "id": user.user.id,
+    "name": user.name,
+    "role": user.user.role
+  }))
 }
 
 export function UserProvider({ children }) {
