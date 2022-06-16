@@ -1,0 +1,57 @@
+[
+  {
+      "id": 0,
+      "path": "/entrar",
+      "name": "Login"
+  },
+  {
+      "id": 1,
+      "path": "/cadastrar",
+      "name": "Cadastro"
+  },
+  {
+      "id": 2,
+      "path": "/recuperar_senha",
+      "name": "Recuperar senha"
+  },
+  {
+      "id": 3,
+      "path": "/alterar_senha",
+      "name": "Alterar senha"
+  },
+  {
+      "id": 4,
+      "path": "/inicio",
+      "name": "Início"
+  },
+  {
+      "id": 5,
+      "path": "/eventos",
+      "name": "Eventos"
+  },
+  {
+      "id": 7,
+      "path": "/cadastros_pendentes",
+      "name": "Cadastros Pendentes"
+  },
+  {
+      "id": 8,
+      "path": "/inscricoes",
+      "name": "Gestao de inscrições"
+  },
+  {
+      "id": 9,
+      "path": "/recompensas",
+      "name": "Gestao de recompensas"
+  },
+  {
+      "id": 10,
+      "path": "/carteira",
+      "name": "Carteira"
+  },
+  {
+      "id": 11,
+      "path": "/perfil",
+      "name": "Meu Perfil"
+  }
+]

@@ -34,7 +34,7 @@ export default function AddEventPage() {
 
   function handleChangeSearch(e) {
     const value = e.target.value;
-    
+
     setSearchValue(value);
     getStudents(value);
   }

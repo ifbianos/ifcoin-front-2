@@ -9,8 +9,110 @@
     background-color: var(--white);
     width: 20%;
     height: 100%;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+
+    font-family: 'Poppins', sans-serif;
 }
+
+.side-bar-container.top {
+    /* position: absolute; */
+
+    position: fixed;
+    background-color: var(--white);
+    width: 20%;
+    height: 70px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+.side-bar-top {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.side-bar-top .svg-inline--fa#logo {
+    font-size: 1.7rem;
+    color: var(--light-green);
+}
+
+.side-bar-top .svg-inline--fa#close {
+    font-size: 1rem;
+    margin-right: 10px;
+    margin-top: 2px;
+}
+
+.logo {
+    color: var(--light-green);
+    font-size: 0.7rem;
+
+    background-color: rgba(76, 192, 62, 0.2);
+    border-radius: 15px;
+
+    padding: 7px;
+
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.side-bar-top .svg-inline--fa:hover {
+    color: var(--light-green);
+    cursor: pointer;
+}
+
+
+#slider {
+    /* position: absolute; */
+    width: 100px;
+    height: 100px;
+    background: blue;
+    transform: translatey(-100%);
+    -webkit-transform: translatey(-100%);
+    z-index: -1;
+
+}
+
+.slide-in {
+    animation: slide-in 0.5s forwards;
+    -webkit-animation: slide-in 0.5s forwards;
+    z-index: -1;
+
+}
+
+.slide-out {
+    animation: slide-out 0.5s forwards;
+    -webkit-animation: slide-out 0.5s forwards;
+    z-index: -1;
+
+}
+
+@keyframes slide-in {
+    100% { transform: translatey(0%); }
+}
+
+@-webkit-keyframes slide-in {
+    100% { -webkit-transform: translatey(0%); }
+}
+
+@keyframes slide-out {
+    0% { transform: translatey(0%); }
+    100% { transform: translateY(-100%); }
+}
+
+@-webkit-keyframes slide-out {
+    0% { -webkit-transform: translatey(0%); }
+    100% { -webkit-transform: translatey(-100%); }
+}
+
+
 
 @media(max-width: 376px){
     .side-bar-container {

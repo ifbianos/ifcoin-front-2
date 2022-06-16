@@ -13,7 +13,7 @@ const Form = (props) => {
   return (
     <div className={`form-container ${value.length || type === 'date' ? 'input' : ''}`}>
       {value.length || type === 'date' ?
-        <p>{label}</p>  
+        <p>{label}</p>
       : null}
       <input placeholder={label} type={type} name={name} value={value} onChange={handleChange}/>
     </div>

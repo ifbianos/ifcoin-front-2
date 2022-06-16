@@ -17,7 +17,7 @@ function Card(props) {
   return (
     <div className='card-container'>
       <h3>{title}</h3>
-      
+
       <div>
         {description}
       </div>

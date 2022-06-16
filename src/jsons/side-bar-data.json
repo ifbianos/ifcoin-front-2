@@ -1,62 +1,27 @@
 [
     {
         "id": 0,
-        "path": "/entrar",
-        "name": "Login"
+        "path": "/inicio",
+        "name": "Início"
     },
     {
         "id": 1,
-        "path": "/cadastrar",
-        "name": "Cadastro"
+        "path": "/eventos",
+        "name": "Eventos"
     },
     {
         "id": 2,
-        "path": "/recuperar_senha",
-        "name": "Recuperar senha"
+        "path": "/cadastros_pendentes",
+        "name": "Cadastros Pendentes"
     },
     {
         "id": 3,
-        "path": "/alterar_senha",
-        "name": "Alterar senha"
+        "path": "/carteira",
+        "name": "Carteira"
     },
     {
         "id": 4,
-        "path": "/tela_inicial",
-        "name": "Tela inicia"
-    },
-    {
-        "id": 5,
         "path": "/perfil",
-        "name": "Painel de usuario"
-    },
-    {
-        "id": 6,
-        "path": "/atualizar_perfil",
-        "name": "Gestao de dados pessoais"
-    },
-    {
-        "id": 7,
-        "path": "/eventos",
-        "name": "Cadastro de eventos"
-    },
-    {
-        "id": 8,
-        "path": "/inscricoes",
-        "name": "Gestao de inscrições"
-    },
-    {
-        "id": 9,
-        "path": "/recompensas",
-        "name": "Gestao de recompensas"
-    },
-    {
-        "id": 10,
-        "path": "/cadastros_pendentes",
-        "name": "Gestao de cadastros"
-    },
-    {
-        "id": 11,
-        "path": "/carteira",
-        "name": "Gestao de moedas"
+        "name": "Meu Perfil"
     }
 ]
