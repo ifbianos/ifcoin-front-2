@@ -3,14 +3,12 @@
 .events-pg-container {
     width: 65vw;
 
-    /* float: center; */
     clear: both;
 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
-    /* margin: 1%; */
+
     margin-left: auto;
     margin-right: auto;
     padding: 1%;
@@ -18,4 +16,10 @@
     border-radius: .5rem;
 
     background-color: var(--light-gray);
+
+    margin-left: 25%;
 }
+/* 
+.events-pg-container.full-page {
+    margin-left: 200px;
+} */

@@ -21,10 +21,10 @@ function Card(props) {
       <div>
         {description}
       </div>
-
       <div className='btn-container'>
-        <button className='btn' id='deny'  onClick={() => handleChangeB1 ? handleChangeB1(item.cpf) : null}>{button1}</button>
-        <button className='btn' onClick={() => handleChangeB2 ? handleChangeB2(item.cpf) : null }>{button2}</button>
+        {button1 && <button className='btn' id='deny'  onClick={() => handleChangeB1 ? handleChangeB1(item.cpf) : null}>{button1}</button>}
+
+        {button2 && <button className='btn' onClick={() => handleChangeB2 ? handleChangeB2(item.cpf) : null }>{button2}</button>}
       </div>
     </div>
   )

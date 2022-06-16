@@ -15,6 +15,7 @@ import Signin from './signin/signin';
 import AddEventPage from './pages/add-event-page/add-event-page';
 import { UserProvider } from './context/user-context';
 import HomePage from './pages/home-page/home-page';
+import { SideBarProvider } from './context/side-bar-context';
 
 const isLogged = () => {
   const loggedUser = sessionStorage.getItem("user");
@@ -38,7 +39,13 @@ root.render(
           { isLogged() ? <HomePage /> : <LoginPage /> }
         </UserProvider>
       } />
-      <Route path="/eventos" element={<EventsPage />} />
+      <Route path="/eventos" element={
+        < UserProvider>
+          <SideBarProvider>
+            <EventsPage />
+          </SideBarProvider>
+        </UserProvider>}
+      />
       <Route path="/cadastros_pendentes" element={<RegistrationManagePage />} />
       <Route path="/cadastrar" element={<Signin />} />
       <Route path="/criar_evento" element={<AddEventPage />} />

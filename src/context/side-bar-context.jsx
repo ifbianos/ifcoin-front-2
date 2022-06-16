@@ -6,8 +6,8 @@ export function SideBarProvider({ children }) {
     const [inactive, setInactive] = useState(false);
 
     return (
-        <SideBarContext.Provider 
-            value={{inactive, setInactive}} 
+        <SideBarContext.Provider
+            value={{inactive, setInactive}}
         >
             {children}
         </SideBarContext.Provider>

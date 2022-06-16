@@ -6,7 +6,6 @@ import SideBarItem from '../side-bar-item/side-bar-item';
 import { faAngleLeft, faAnglesDown, faAnglesLeft, faAnglesRight, faAnglesUp, faBars, faCalendar, faCentSign, faCommentDollar, faCommentsDollar, faFrancSign, faHouse, faListCheck, faRectangleList, faUser, faWallet } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-
 const getIcon = ( type ) => {
 	switch (type) {
 		case 'Início':
@@ -23,9 +22,15 @@ const getIcon = ( type ) => {
 	}
 }
 
-const SideBar = () => {
+const SideBar = (props) => {
 	const [selectedItem, setSelectedItem] = useState(0);
-	const [openModal, setOpenModal] = useState(true)
+	const [openModal, setOpenModal] = useState(true);
+
+	const {
+		inactive,
+		setInactive
+	} = props;
+
 	return (
 		<>
 			<div className={`side-bar-container	top`}>
@@ -35,7 +40,11 @@ const SideBar = () => {
 								<FontAwesomeIcon id='logo' icon={faFrancSign} />
 								<FontAwesomeIcon id='logo' icon={faCentSign} />
 							</div>
-							<FontAwesomeIcon onClick={() => setOpenModal(!openModal)} id='close' icon={ openModal ? faAnglesUp : faAnglesDown} />
+							<FontAwesomeIcon onClick={() => {
+								//fazer handleClick
+								setInactive(!inactive)
+								setOpenModal(!openModal)
+							}} id='close' icon={ openModal ? faAnglesUp : faAnglesDown} />
 						</div>
 					</div>
 				<div className={`side-bar-container ${openModal ? 'slide-in' : 'slide-out'}`}>

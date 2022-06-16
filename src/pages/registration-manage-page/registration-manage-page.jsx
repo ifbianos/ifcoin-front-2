@@ -5,6 +5,7 @@ import Card from "../../components/card/card";
 import data from '../../jsons/registers.json';
 import './registration-manage-page.css';
 import API from "../../api";
+import SideBar from "../../components/side-bar/side-bar";
 
 export default function RegistrationManagePage() {
   const [requests, setRequests] = useState([]);
@@ -41,7 +42,7 @@ export default function RegistrationManagePage() {
     API.post(`api/user/register?cpf=${cpf}`)
     .then(() => {
       console.log('deu bom')
-      getPendingRegisters() 
+      getPendingRegisters()
     })
   }
 
@@ -53,6 +54,7 @@ export default function RegistrationManagePage() {
 
   return (
     <div className='registration-pg-container'>
+      <SideBar />
       {requests.map((item) => (
         <Card
           title='Registro Pendente'

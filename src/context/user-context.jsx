@@ -1,4 +1,5 @@
 import React, {createContext, useContext, useState} from 'react';
+import { useEffect } from 'react';
 import API from '../api';
 
 const UserContext = createContext();
@@ -6,29 +7,40 @@ const UserContext = createContext();
 export const login = (user) => {
   API.post('api/user/login', user)
   .then(function (response) {
-    saveUserSessionStorage(response.data)
+    saveUserLocalStorage(response.data)
   })
   .catch(function (error) {
     console.log(error);
   });
 }
 
-export function saveUserSessionStorage(user) {
-  sessionStorage.setItem("user", JSON.stringify({
+export function saveUserLocalStorage(user) {
+  localStorage.setItem("user", JSON.stringify({
     "id": user.user.id,
     "name": user.name,
     "role": user.user.role
   }))
 }
 
+export function getUserData() {
+  return JSON.parse(localStorage.getItem("user"));
+}
+
 export function UserProvider({ children }) {
   const [user, setUser] = useState({
-    username: "",
-    password: ""
+    "id": "",
+    "name": "",
+    "role": ""
   })
 
+  useEffect(() => {
+    const userData = getUserData()
+    if (!userData) return;
 
-  console.log('context', user)
+    setUser(getUserData())
+    console.log('user apos setar', user)
+  }, [])
+
   function handleChange(e) {
     console.log('e', e)
     const value = e.target.value;
@@ -39,8 +51,8 @@ export function UserProvider({ children }) {
   }
 
   return (
-    <UserContext.Provider 
-      value={{user, setUser, handleChange}} 
+    <UserContext.Provider
+      value={{user, setUser, handleChange}}
     >
       {children}
     </UserContext.Provider>
@@ -54,5 +66,5 @@ export function useUser() {
 
   const { user, setUser, handleChange } = context;
 
-  return { user, setUser, handleChange, login, saveUserSessionStorage };
+  return { user, setUser, handleChange, login, saveUserLocalStorage };
 }

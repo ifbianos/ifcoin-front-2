@@ -39,7 +39,6 @@ export default function AddEventPage() {
     getStudents(value);
   }
 
-  // console.log(searchedStudents)
   const getStudents = (input) => {
     API.get(`api/user/student?containing=${input}`).then((response) => {
       if (response.data) setSearchedStudents(response.data.map((data, index) => {
@@ -48,7 +47,7 @@ export default function AddEventPage() {
       else setSearchedStudents([])
     });
   }
-  // console.log({searchedStudents})
+
   function submitData(evt){
     evt.preventDefault();
     API.post('api/event/requestaccount', event)
@@ -99,8 +98,8 @@ export default function AddEventPage() {
           setEvent({...event, requestStudentList: students.map((st) => st.id)})
         }
     })
-  }, students)
-  console.log(event)
+  }, students);
+
   const handleSearchStudent = index => e => {
     let newArr = [...searchedStudents];
     newArr[index].checked =  e.target.checked;
@@ -113,21 +112,21 @@ export default function AddEventPage() {
       <p>Criar evento</p>
       <div className="form-blocks">
         <div className="forms-block-1">
-          <Form 
+          <Form
             handleChange={handleChange}
             type="text"
             name="name"
             label="Nome"
             value={event.name}
           />
-          <Form 
+          <Form
             handleChange={handleChange}
             type="text"
             label="Descrição"
             name="description"
             value={event.description}
           />
-          <Form 
+          <Form
             handleChange={handleChange}
             type="date"
             label="Início"
@@ -136,14 +135,14 @@ export default function AddEventPage() {
           />
         </div>
         <div className="forms-block-2">
-          <Form 
+          <Form
             handleChange={handleChange}
             type="date"
             label="Final"
             name="finishAt"
             value={event.finishAt}
           />
-          <Form 
+          <Form
             handleChange={handleChange}
             type="number"
             label="IFCOINS"
@@ -161,7 +160,7 @@ export default function AddEventPage() {
               </>
             }
           }
-         
+
           )}
           {/* {students.map((student, index) => {
               return (
@@ -176,9 +175,9 @@ export default function AddEventPage() {
       </div>
       <div>
         <>
-        Lista vip 
+        Lista vip
             <br/>
-         {students.map((student, index) => 
+         {students.map((student, index) =>
           <>
             <button onClick={handleDeleteStudent(index)}>X</button><span>{student.name}</span>
             <br/>
@@ -187,7 +186,6 @@ export default function AddEventPage() {
         </>
       </div>
       <button className='btn' onClick={handleCreateEvent}>ENVIAR</button>
-      {/* <input type="submit" value="Enviar" /> */}
-    </div>    
+    </div>
   );
 }

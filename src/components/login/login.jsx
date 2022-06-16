@@ -12,7 +12,6 @@ export default function Login() {
     setUser,
     handleChange,
     login,
-    saveUserSessionStorage
   } = useUser();
 
   const navigate = useNavigate();
@@ -48,6 +47,6 @@ export default function Login() {
         <button className='btn' onClick={submitData}>ENVIAR</button>
       </div>
       <div  className="screen-2"/>
-    </div>    
+    </div>
   );
 }
