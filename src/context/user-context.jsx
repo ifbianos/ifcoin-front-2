@@ -2,17 +2,9 @@ import React, {createContext, useContext, useState} from 'react';
 import { useEffect } from 'react';
 import API from '../api';
 
-const UserContext = createContext();
+import { useNavigate } from 'react-router-dom';
 
-export const login = (user) => {
-  API.post('api/user/login', user)
-  .then(function (response) {
-    saveUserLocalStorage(response.data)
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-}
+const UserContext = createContext();
 
 export function saveUserLocalStorage(user) {
   localStorage.setItem("user", JSON.stringify({
@@ -33,6 +25,8 @@ export function UserProvider({ children }) {
     "role": ""
   })
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const userData = getUserData()
     if (!userData) return;
@@ -50,9 +44,20 @@ export function UserProvider({ children }) {
     });
   }
 
+  const make_login = (user) => {
+    API.post('api/user/login', user)
+    .then(function (response) {
+      saveUserLocalStorage(response.data)
+      navigate('/');
+    })
+    .catch(function (error) {
+      window.alert(error.response.data.erro)
+    });
+  }
+
   return (
     <UserContext.Provider
-      value={{user, setUser, handleChange}}
+      value={{user, setUser, handleChange, make_login}}
     >
       {children}
     </UserContext.Provider>
@@ -64,7 +69,7 @@ export function useUser() {
 
   if(!context) throw new Error("useSideBar must be used within a UserProvider");
 
-  const { user, setUser, handleChange } = context;
+  const { user, setUser, handleChange, make_login } = context;
 
-  return { user, setUser, handleChange, login, saveUserLocalStorage };
+  return { user, setUser, handleChange, make_login, saveUserLocalStorage };
 }

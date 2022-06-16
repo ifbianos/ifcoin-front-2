@@ -11,7 +11,7 @@ const Form = (props) => {
   } = props;
 
   return (
-    <div className={`form-container ${value?.length || type === 'date' ? 'input' : ''}`}>
+    <div className={`form-container ${value?.length || type === 'date' ? 'input' : 'input_filled'}`}>
       {value?.length || type === 'date' ?
         <p>{label}</p>
       : null}

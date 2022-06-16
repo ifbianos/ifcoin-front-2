@@ -5,7 +5,10 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  Navigate
 } from "react-router-dom";
+
+
 import App from './App';
 import EventsPage from './pages/events-page/events-page';
 import LoginPage from './pages/login-page/login-page';
@@ -33,8 +36,13 @@ const root = ReactDOM.createRoot(
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<HomePage />} />
-        <Route path="/entrar" element={
+      <Route
+        exact
+        path="/"
+        render={() => (isLogged ? <Navigate to="/" /> : <LoginPage />)}
+        element={<HomePage />}
+      />
+      <Route path="/entrar" element={
         < UserProvider>
           { isLogged() ? <HomePage /> : <LoginPage /> }
         </UserProvider>

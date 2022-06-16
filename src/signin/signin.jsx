@@ -52,25 +52,25 @@ export default function Signin() {
 
   return (
     <div className="signin-page">
-      <div className="add-event-container add-signin-container">
+      <div className="signin-container">
         <p>Requisitar conta</p>
         <div className="form-blocks">
           <div className="forms-block-1">
-            <Form 
+            <Form
               handleChange={handleChange}
               type="text"
               name="name"
               label="Nome"
               value={user.name}
             />
-            <Form 
+            <Form
               handleChange={handleChange}
               type="text"
               label="Sobrenome"
               name="lastName"
               value={user.lastName}
             />
-            <Form 
+            <Form
               handleChange={handleChange}
               type="text"
               label="CPF"
@@ -79,21 +79,21 @@ export default function Signin() {
             />
           </div>
           <div className="forms-block-2">
-            <Form 
+            <Form
               handleChange={handleChange}
               type="text"
               label="Categoria"
               name="role"
               value={user.role}
             />
-            <Form 
+            <Form
               handleChange={handleChangeSecond}
               type="text"
               label="UserName"
               name="username"
               value={user.userRequestDto.username}
             />
-            <Form 
+            <Form
               handleChange={handleChangeSecond}
               type="text"
               label="Senha"
@@ -106,6 +106,6 @@ export default function Signin() {
         <button className='btn' onClick={submitData}>ENVIAR</button>
       </div>
       <div  className="screen-2"/>
-    </div>    
+    </div>
   );
 }

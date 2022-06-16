@@ -34,7 +34,7 @@ export default function RegistrationManagePage() {
     API.delete(`api/user/register?cpf=${cpf}`)
     .then(() => {
       console.log('deu bom')
-      getPendingRegisters() 
+      getPendingRegisters()
     })
   }
 

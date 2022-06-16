@@ -8,11 +8,9 @@
     margin: 1px;
 
     padding: .2rem;
-
     border-radius: .2rem;
 
     margin-bottom: 1rem;
-
     height: 2rem;
 }
 
@@ -26,6 +24,7 @@
     font-size: .7rem;
     text-align: left;
     margin: 0;
+
     color: var(--grey);
     height: .7rem;
 }
@@ -33,17 +32,24 @@
 .form-container input {
     width: 100%;
     border: none;
-    border-bottom: .02rem solid gray;
+    border-bottom: .02rem dotted gray;
+    border-radius: 2px;
     height: 1.3rem;
-    margin-top: 0.7rem;
 
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
     color: rgb(78, 78, 78);
-
 }
 
 .form-container.input input {
     margin-top: 0.2rem;
+    background-color: white;
+}
 
+.form-container.input_filled input {
+    background-color: rgba(76, 192, 62, 0.1);
 }
 
 textarea:focus, input:focus{
